@@ -1,0 +1,122 @@
+/* forms.sass, adapted from blueprint forms.css
+
+label
+  :font-size 1.1em
+  :font-weight bold
+  
+fieldset
+  :padding 1.4em
+  :margin 0 0 1.5em 0
+  :border 1px solid #ccc
+
+legend
+  :font-weight bold
+  :font-size 1.2em
+
+/ Text fields should be identified with .text or .title
+
+input[type="text"], input.text, input.title, textarea, select
+  :margin 0.5em 0
+  :border 1px solid #bbb
+    
+  &:focus
+    :border-color #666
+
+  &.fieldWithErrors
+    :border-color = !bg_red_dark  
+
+
+input[type="text"], input.text, input.title
+  :width 300px
+  :padding 4px
+  
+input.title
+  :font-size 1.5em
+  
+textarea
+  :width 390px
+  :height 250px
+  :padding 4px
+
+/* Helpers for success, notice and error boxes
+
+.error, .notice, .success
+  :padding .8em
+  :margin-bottom 1em
+  :border 2px solid #ddd
+
+.error
+  :background = !bg_red_light
+  :color = !fg_red_dark
+  :border-color = !border_red
+  & a
+    :color = !fg_red_dark
+  
+.notice
+  :background = !bg_yellow_light
+  :color = !fg_yellow_dark
+  :border-color = !border_yellow
+  & a
+    :color = !fg_yellow_dark 
+  
+.success
+  :background = !bg_green_light
+  :color = !fg_green_dark
+  :border-color = !border_green
+  & a
+    :color = !fg_green_dark
+    
+/* Layout helper for forms. Use <dt> for labels and <dd> for form fields and
+/* notes.
+
+form
+  
+  dl
+    :width 100%
+    +clearfix
+  
+  dt
+    :width 20%
+    :margin 0.5em 0
+    :float left
+    :clear left
+    :text-align right
+
+  dd
+    :float left    
+    :width 79%
+    :margin 0 0 0 1%
+    
+    img
+      :vertical-align middle
+    
+  dd.notes
+    :margin-left 20%
+    :padding 0 0 0.3em 1%
+    :clear left
+    :color #555
+    :width auto
+  
+// Rails error styles
+
+label.fieldWithErrors
+  :color = !fg_red
+
+#errorExplanation 
+  :background #fff
+  :border = 1px solid !bg_red_dark
+  :margin-bottom 1em
+  
+  h2
+    :font-size 1.1em
+    :font-weight bold
+    :padding-left 1em
+    :line-height 2.6
+    :background = !bg_red_dark
+    :color #fff
+  
+  ul, p
+    :margin 0.5em 0 1em 1em
+  
+  ul
+    :margin-left 2em

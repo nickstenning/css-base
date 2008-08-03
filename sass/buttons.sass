@@ -1,0 +1,97 @@
+// Neat button styles: http://particletree.com/features/rediscovering-the-button-element/
+
+.buttons
+  +clearfix
+  
+  img
+    // This allows button icons to display in the right place, along with form
+    // helper icons (like a date picker icon) which have vertical-align: middle.
+    :vertical-align baseline
+    :float none
+    
+.buttons a, button
+  :display block
+  :float left
+  :margin 0 7px 0 0
+  :background-color #f5f5f5
+  :border 1px solid #dedede
+  :border-top 1px solid #eee
+  :border-left 1px solid #eee
+
+  :font-size 100%
+  :line-height 1.4
+  :text-decoration none
+  :font-weight bold
+  :color #565656
+  :cursor pointer
+  :padding 5px 10px 6px 7px 
+
+button
+  :width auto
+  :overflow visible
+  // IE6
+  :padding 4px 10px 3px 7px 
+  
+button[type]
+  // Firefox 
+  :padding 5px 10px 5px 7px 
+  // Safari
+  :line-height 17px 
+
+*:first-child+html button[type]
+  // IE7
+  :padding 4px 10px 3px 7px
+
+.buttons a.secondary, button.secondary
+  :float right
+
+button img, .buttons a img 
+  :margin 0 3px -3px 0 !important
+  :padding 0
+  :border none
+  :width 16px
+  :height 16px
+  
+// Button colours
+
+// standard
+
+button:hover, .buttons a:hover
+  :background-color = !bg_blue_light
+  :border = 1px solid !border_blue
+  :color = !fg_blue
+
+.buttons a:active
+  :background-color = !bg_blue_dark
+  :border = 1px solid !bg_blue_dark
+  :color #fff
+
+// positive (save, create)
+
+button.positive, .buttons a.positive
+  :color = !fg_green
+  
+.buttons a.positive:hover, button.positive:hover
+  :background-color = !bg_green_light
+  :border = 1px solid !border_green
+  :color = !fg_green
+
+.buttons a.positive:active
+  :background-color = !bg_green_dark
+  :border = 1px solid !bg_green_dark
+  :color #fff
+
+/* negative (cancel, delete)
+
+.buttons a.negative, button.negative
+  :color = !fg_red
+
+.buttons a.negative:hover, button.negative:hover
+  :background = !bg_red_light
+  :border = 1px solid !border_red
+  :color = !fg_red
+
+.buttons a.negative:active
+  :background-color = !bg_red_dark
+  :border = 1px solid !bg_red_dark
+  :color #fff
