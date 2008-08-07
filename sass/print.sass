@@ -1,0 +1,55 @@
+//
+// print.sass, adapted from blueprint print.css
+// Nick Stenning, 2008-08-03
+//
+
+body 
+  :line-height 1.5
+  :font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+  :color #000
+  :background none
+  :font-size 10pt
+
+hr
+  :background #ccc
+  :color #ccc
+  :width 100%
+  :height 2px
+  :margin 2em 0
+  :padding 0
+  :border none
+
+hr.space
+  :background #fff
+  :color #fff
+
+// Text
+
+h1, h2, h3, h4, h5, h6
+  :font-family "Helvetica Neue", Arial, "Lucida Grande", sans-serif
+  
+code
+  :font .9em "Courier New", Monaco, Courier, monospace 
+
+blockquote
+  :margin 1.5em
+  :padding 1em
+  :font-style italic
+  :font-size .9em
+
+// Links
+
+a:link, a:visited
+  :background transparent
+  :font-weight 700
+  :text-decoration underline
+
+  &:after
+    :content " (" attr(href) ") "
+    :font-size 90%
+
+
+// NB: the following is valid CSS3, but the W3C validator doesn't think so...
+
+a[href^="/"]:after
+  :content " (http://<LOCALLINK>" attr(href) ") "

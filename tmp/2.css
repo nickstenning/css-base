@@ -1,0 +1,29 @@
+body {min-width:640px}
+
+#header,#menu,#content,#sub-section,#footer {
+
+overflow:hidden;
+
+display:inline-block
+
+}
+
+/* safari and opera need this */
+
+#footer {width:100%}
+
+#header,#menu,#content {float:left}
+
+#sub-section {float:right}
+
+#header {width:49%}
+
+/* leaving room for rounding error (MSIE5.5) */
+
+#menu {width:50.9%}
+
+#content {width:79.9%}
+
+#sub-section {width:20%}
+
+#footer {clear:both}

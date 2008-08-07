@@ -1,0 +1,32 @@
+body
+  :min-width 640px
+
+// MSIE display:inline-block is to make sure MSIE doesn't paint the background
+// above the containers, the overflow declaration is to make sure the containers 
+// do not drop below siblings if content pushes the width (in modern browsers 
+// it doesn't drop, but it spawns an horizontal scrollbar).
+
+#header, #menu, #content, #sub-section, #footer
+  :overflow hidden
+  :display inline-block
+
+// safari and opera need this
+#footer
+  :width 100%
+#header, #menu, #content 
+  :float left
+#sub-section
+  :float right
+#header
+  :width 49%
+
+// leaving room for rounding error (MSIE5.5)
+
+#menu 
+  :width 50.9%
+#content
+  :width 79.9%
+#sub-section
+  :width 20%
+#footer
+  :clear both

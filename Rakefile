@@ -1,8 +1,9 @@
 task :default => [:sass, :haml]
 
 task :sass do
-  `sass -t compressed sass/screen.sass > out/screen.css`
-  `sass -t compressed sass/ie.sass > out/ie.css`
+  %w( screen ie print ).each do |x|
+    `sass -t compressed sass/#{x}.sass > out/#{x}.css`
+  end
 end
 
 task :haml do

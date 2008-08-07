@@ -1,4 +1,7 @@
-/* typography.sass, adapted from blueprint typography.css
+//
+// typography.sass, adapted from blueprint typography.css
+// by Nick Stenning, 2008-08-03
+//
 
 // Default font settings. 
 // The font-size percentage is of 16px. (0.75 * 16px = 12px)
@@ -62,11 +65,14 @@ p
     :margin 1.5em 0 1.5em 1.5em
     
 a
-  :color #009 
+  :color = !href_colour 
   :text-decoration underline
   
+  .quiet &
+    :color = !href_colour + #888
+  
   &:focus, &:hover
-    :color #000
+    :color = !href_colour_hover
   
 blockquote
   :margin 1.5em 

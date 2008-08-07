@@ -7,15 +7,29 @@
     /[if IE]
       %link{ :href => "ie.css", :rel => "stylesheet", :media => "screen, projection, print", :type => "text/css" }
     %link{ :href => "print.css", :rel => "stylesheet", :media => "print", :type => "text/css" }
-    
-   
+       
     %style{ :type => "text/css" }
       :sass
-        #airlock
-          :margin 1em
+        @import sass/layout/2.sass
+        @import sass/base/colours.sass
+        
+        #header
+          :background = !bg_red_light
+        #menu
+          :background = !bg_yellow_light
+        #content
+          :background = !bg_blue_light
+        #sub-section
+          :background = !bg_green_light
+        #footer
+          :background = !bg_red_light
       
   %body
-    #airlock
+    #header
+      %h1 header
+    #menu
+      %h1 menu
+    #content
       %h1 This is a test page
     
       %p.success An example success flash.
@@ -144,44 +158,10 @@
                 Cancel
           
           %p Correctly cleared after the end of the form.
-  
-      %h3 Rails form error styles
+      
+    #sub-section
+      %h1 sub-section
+    #footer
+      %h1 footer
     
-      %form  
-        #errorExplanation
-          %h2 Form could not be submitted
-          %p Some elements of the submitted form were unable to pass our checks.
-          %ul
-            %li Name can't be blank.
-            %li Email must be a valid email address.
-          %p Some elements of the submitted form were unable to pass our checks.
-
-        %dl
-          %dt
-            %label.fieldWithErrors Name:
-          %dd
-            %input.fieldWithErrors{ :type => 'text' }
-
-          %dt 
-            %label.fieldWithErrors Email:
-          %dd
-            %input.fieldWithErrors{ :type => 'text' } 
-            %img{ :src => "images/icons/email.png", :alt => "" }
-          %dd.notes
-            We even correctly validate emails with '+' in, unlike 99% of the web!
-
-          %dt
-          %dd.buttons
-            %button.positive{ :type => 'submit' }
-              %img{ :src => "images/icons/tick.png", :alt => "" }
-              Submit
-            %a{ :href => "#" }
-              %img{ :src => "images/icons/cog.png", :alt => "" }
-              Check form
-            %a.negative.secondary{ :href => "#" }
-              %img{ :src => "images/icons/cross.png", :alt => "" }
-              Cancel
-
-      %h3 Code samples
-
-      %pre= File.read('sass/base/mixins.sass')
+      
